@@ -49,7 +49,7 @@ const MyTestEnum myEnum = MyTestEnum.Value2;
 var result = myEnum.Switch()
     .When(MyTestEnum.Value1, () => "Not this one?")
     .When(MyTestEnum.Value2, () => "Dang!")
-    .Default("David Brent")
+    .Else("David Brent")
     .Value();
 
 Console.WriteLine(result); // Outputs: Dang!

@@ -34,7 +34,7 @@ namespace FluentSwitch.Tests
             var result = myEnum.Switch()
                 .When(MyTestEnum.Value2, () => "Value2")
                 .When(MyTestEnum.Value3, () => "Value3")
-                .Default("Not Found")
+                .Else("Not Found")
                 .Value();
             
             Assert.AreEqual("Not Found", result);
@@ -59,7 +59,7 @@ namespace FluentSwitch.Tests
             const MyTestEnum myEnum = MyTestEnum.Value1;
 
             var result = myEnum.Switch()
-                .Default("Not Found")
+                .Else("Not Found")
                 .When(MyTestEnum.Value2, () => "Value2")
                 .When(MyTestEnum.Value3, () => "Value3")
                 .Value();

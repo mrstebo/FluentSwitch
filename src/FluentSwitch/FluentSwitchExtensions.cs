@@ -27,13 +27,13 @@ namespace FluentSwitch
             return builder;
         }
         
-        public static IFluentSwitchBuilder<TEnum, TOutput> Default<TEnum, TOutput>(
+        public static IFluentSwitchBuilder<TEnum, TOutput> Else<TEnum, TOutput>(
             this IFluentSwitchBuilder<TEnum> builder, TOutput defaultValue)
         {
             return new FluentSwitchValueBuilder<TEnum, TOutput>(builder.InputValue, defaultValue);
         }
         
-        public static IFluentSwitchBuilder<TEnum, TOutput> Default<TEnum, TOutput>(
+        public static IFluentSwitchBuilder<TEnum, TOutput> Else<TEnum, TOutput>(
             this IFluentSwitchBuilder<TEnum, TOutput> builder, TOutput defaultValue)
         {
             return !builder.IsComplete ? new FluentSwitchValueBuilder<TEnum, TOutput>(builder.InputValue, defaultValue) : builder;
