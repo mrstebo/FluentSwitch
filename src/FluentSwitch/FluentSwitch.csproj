@@ -38,7 +38,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FluentSwitchBuilder.cs" />
+    <Compile Include="FluentSwitchValueBuilder.cs" />
+    <Compile Include="FluentSwitchInitialBuilder.cs" />
     <Compile Include="FluentSwitchExtensions.cs" />
     <Compile Include="IFluentSwitchBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

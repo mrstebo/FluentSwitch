@@ -17,7 +17,7 @@ namespace FluentSwitch.Tests
         {
             const MyTestEnum myEnum = MyTestEnum.Value1;
 
-            var result = myEnum.Switch<MyTestEnum, string>()
+            var result = myEnum.Switch()
                 .When(MyTestEnum.Value1, () => "Found")
                 .When(MyTestEnum.Value2, () => "Value2")
                 .When(MyTestEnum.Value3, () => "Value3")
@@ -31,7 +31,7 @@ namespace FluentSwitch.Tests
         {
             const MyTestEnum myEnum = MyTestEnum.Value1;
 
-            var result = myEnum.Switch<MyTestEnum, string>()
+            var result = myEnum.Switch()
                 .When(MyTestEnum.Value2, () => "Value2")
                 .When(MyTestEnum.Value3, () => "Value3")
                 .Default("Not Found")
@@ -45,7 +45,10 @@ namespace FluentSwitch.Tests
         {
             const MyTestEnum myEnum = MyTestEnum.Value1;
 
-            var result = myEnum.Switch<MyTestEnum, string>().Value();
+            var result = myEnum.Switch()
+                .When(MyTestEnum.Value2, () => "Value2")
+                .When(MyTestEnum.Value3, () => "Value3")
+                .Value();
 
             Assert.AreEqual(default(string), result);
         }
@@ -55,7 +58,7 @@ namespace FluentSwitch.Tests
         {
             const MyTestEnum myEnum = MyTestEnum.Value1;
 
-            var result = myEnum.Switch<MyTestEnum, string>()
+            var result = myEnum.Switch()
                 .Default("Not Found")
                 .When(MyTestEnum.Value2, () => "Value2")
                 .When(MyTestEnum.Value3, () => "Value3")

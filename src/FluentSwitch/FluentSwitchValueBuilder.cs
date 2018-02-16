@@ -2,11 +2,11 @@
 
 namespace FluentSwitch
 {
-    internal class FluentSwitchBuilder<TEnum, TOutput> : IFluentSwitchBuilder<TEnum, TOutput>
+    internal class FluentSwitchValueBuilder<TEnum, TOutput> : IFluentSwitchBuilder<TEnum, TOutput>
     {
-        public FluentSwitchBuilder(TEnum value, TOutput defaultValue = default(TOutput))
+        public FluentSwitchValueBuilder(TEnum inputValue, TOutput defaultValue = default(TOutput))
         {
-            InputValue = value;
+            InputValue = inputValue;
             DefaultValue = defaultValue;
         }
         
