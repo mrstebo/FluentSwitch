@@ -2,13 +2,8 @@
 
 namespace FluentSwitch
 {
-    public static class FluentSwitchExtensions
+    public static class FluentSwitchFactoryExtensions
     {
-        public static IFluentSwitchBuilder<TEnum> Switch<TEnum>(this TEnum value)
-        {
-            return new FluentSwitchInitialBuilder<TEnum>(value);
-        }
-        
         public static IFluentSwitchBuilder<TEnum, TOutput> When<TEnum, TOutput>(
             this IFluentSwitchBuilder<TEnum> builder, TEnum value, Func<TOutput> func)
         {
@@ -18,7 +13,7 @@ namespace FluentSwitch
             
             return newBuilder;
         }
-
+        
         public static IFluentSwitchBuilder<TEnum, TOutput> When<TEnum, TOutput>(
             this IFluentSwitchBuilder<TEnum, TOutput> builder, TEnum value, Func<TOutput> func)
         {
@@ -28,20 +23,15 @@ namespace FluentSwitch
         }
         
         public static IFluentSwitchBuilder<TEnum, TOutput> Else<TEnum, TOutput>(
-            this IFluentSwitchBuilder<TEnum> builder, TOutput defaultValue)
+            this IFluentSwitchBuilder<TEnum> builder, Func<TOutput> defaultValueFunc)
         {
-            return new FluentSwitchValueBuilder<TEnum, TOutput>(builder.InputValue, defaultValue);
+            return new FluentSwitchValueBuilder<TEnum, TOutput>(builder.InputValue, defaultValueFunc());
         }
         
         public static IFluentSwitchBuilder<TEnum, TOutput> Else<TEnum, TOutput>(
-            this IFluentSwitchBuilder<TEnum, TOutput> builder, TOutput defaultValue)
+            this IFluentSwitchBuilder<TEnum, TOutput> builder, Func<TOutput> defaultValueFunc)
         {
-            return !builder.IsComplete ? new FluentSwitchValueBuilder<TEnum, TOutput>(builder.InputValue, defaultValue) : builder;
-        }
-        
-        public static TOutput Value<TEnum, TOutput>(this IFluentSwitchBuilder<TEnum, TOutput> builder)
-        {
-            return builder.IsComplete ? builder.CurrentValue : builder.DefaultValue;
+            return !builder.IsComplete ? new FluentSwitchValueBuilder<TEnum, TOutput>(builder.InputValue, defaultValueFunc()) : builder;
         }
     }
 }

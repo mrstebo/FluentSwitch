@@ -42,7 +42,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FluentSwitchExtensionsTests.cs" />
+    <Compile Include="FluentSwitchFactoryExtensionsTests.cs" />
+    <Compile Include="FluentSwitchValueExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
