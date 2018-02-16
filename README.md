@@ -42,13 +42,26 @@ public enum MyTestEnum
 }
 ```
 
-_The code_
+_The code (with factories)_
 ```cs
 const MyTestEnum myEnum = MyTestEnum.Value2;
 
 var result = myEnum.Switch()
     .When(MyTestEnum.Value1, () => "Not this one?")
     .When(MyTestEnum.Value2, () => "Dang!")
+    .Else(() => "David Brent")
+    .Value();
+
+Console.WriteLine(result); // Outputs: Dang!
+```
+
+_The code (with values)_
+```cs
+const MyTestEnum myEnum = MyTestEnum.Value2;
+
+var result = myEnum.Switch()
+    .When(MyTestEnum.Value1, "Not this one?")
+    .When(MyTestEnum.Value2, "Dang!")
     .Else("David Brent")
     .Value();
 
