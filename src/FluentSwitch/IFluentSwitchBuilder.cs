@@ -7,8 +7,9 @@ namespace FluentSwitch
         TEnum InputValue { get; }
     }
     
-    public interface IFluentSwitchBuilder<TEnum, TOutput> : IFluentSwitchBuilder<TEnum>
+    public interface IFluentSwitchBuilder<TEnum, TOutput>
     {
+        TEnum InputValue { get; }
         TOutput DefaultValue { get; }
         TOutput CurrentValue { get; }
         bool IsComplete { get; }
