@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentSwitch", "FluentSwitch\FluentSwitch.csproj", "{4E93351E-0AE8-44CC-AB36-83744316939A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentSwitch.Tests", "FluentSwitch.Tests\FluentSwitch.Tests.csproj", "{6D3D3329-9AE4-4FA3-91D9-E01FEBEB9CC9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E93351E-0AE8-44CC-AB36-83744316939A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E93351E-0AE8-44CC-AB36-83744316939A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E93351E-0AE8-44CC-AB36-83744316939A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E93351E-0AE8-44CC-AB36-83744316939A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D3D3329-9AE4-4FA3-91D9-E01FEBEB9CC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D3D3329-9AE4-4FA3-91D9-E01FEBEB9CC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D3D3329-9AE4-4FA3-91D9-E01FEBEB9CC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D3D3329-9AE4-4FA3-91D9-E01FEBEB9CC9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
