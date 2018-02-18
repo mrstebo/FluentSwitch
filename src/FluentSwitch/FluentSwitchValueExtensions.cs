@@ -10,7 +10,7 @@
         public static IFluentSwitchBuilder<TEnum, TOutput> When<TEnum, TOutput>(
             this IFluentSwitchBuilder<TEnum> builder, TEnum value, TOutput outputValue)
         {
-            return builder.When(value, () => outputValue);
+            return new FluentSwitchValueBuilder<TEnum, TOutput>(builder.InputValue).When(value, outputValue);
         }
         
         public static IFluentSwitchBuilder<TEnum, TOutput> When<TEnum, TOutput>(
@@ -22,7 +22,7 @@
         public static IFluentSwitchBuilder<TEnum, TOutput> Else<TEnum, TOutput>(
             this IFluentSwitchBuilder<TEnum> builder, TOutput defaultValue)
         {
-            return builder.Else(() => defaultValue);
+            return new FluentSwitchValueBuilder<TEnum, TOutput>(builder.InputValue).Else(defaultValue);
         }
         
         public static IFluentSwitchBuilder<TEnum, TOutput> Else<TEnum, TOutput>(
