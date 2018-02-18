@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>FluentSwitch</id>
+    <version>$version$</version>
+    <authors>mrstebo</authors>
+    <owners>mrstebo</owners>
+    <licenseUrl>https://github.com/mrstebo/FluentSwitch/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/mrstebo/FluentSwitch</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Inspired by Ruby syntax for returning a value from a switch statement</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>switch ruby syntax return value</tags>
+  </metadata>
+  <files>
+    <file src="src\FluentSwitch\bin\$target$\FluentSwitch.dll" target="lib" />
+  </files>
+</package>
