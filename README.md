@@ -33,6 +33,20 @@ p my_variable # Outputs: Dang!
 
 This package adds a similar behaviour by chaining methods:
 
+```cs
+const int myValue = 2;
+
+var result = myValue.Switch()
+    .When(1, "Not this one?")
+    .When(2, "Dang!")
+    .Else("David Brent")
+    .Value();
+
+Console.WriteLine(result); // Outputs: Dang!
+```
+
+***It can even work with enums***
+
 _Enums_
 ```cs
 public enum MyTestEnum
